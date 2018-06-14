@@ -13,10 +13,10 @@ ELEPHANT IMPORT
   letter-spacing: 0.08em;
 }
 #blog-listing-medium .post h2 a {
-  color: #555555;
+  color: #555555; /* Colour of text before hover */
 }
 #blog-listing-medium .post h2 a:hover {
-  color: #e01557;
+  color: #2065a1; /* Colour of text on hover */
 }
 #blog-listing-medium .post .author-category {
   float: left;
@@ -34,11 +34,11 @@ ELEPHANT IMPORT
   font-size: 12px;
 }
 #blog-listing-medium .post .date-comments a {
-  color: #999999;
+  color: #999999; /* Colour of date before hover */
   margin-right: 20px;
 }
 #blog-listing-medium .post .date-comments a:hover {
-  color: #e01557;
+  color: #2065a1; /* Colour of date on hover */
 }
 @media (min-width: 768px) {
   #blog-listing-medium .post .date-comments {
@@ -47,20 +47,6 @@ ELEPHANT IMPORT
 }
 #blog-listing-medium .post .intro {
   text-align: left;
-}
-#blog-listing-medium .post .clearfix:before,
-#blog-listing-medium .post .clearfix:after,
-#blog-listing-medium .post .navbar:before,
-#blog-listing-medium .post .navbar:after,
-#blog-listing-medium .post .navbar-header:before,
-#blog-listing-medium .post .navbar-header:after {
-  content: " ";
-  display: table;
-}
-#blog-listing-medium .post .clearfix:after,
-#blog-listing-medium .post .navbar:after,
-#blog-listing-medium .post .navbar-header:after {
-  clear: both;
 }
 #blog-listing-medium .post .clearfix:before,
 #blog-listing-medium .post .clearfix:after,
@@ -100,7 +86,32 @@ ELEPHANT IMPORT
 /*
 ----- More customisation -----
 */
+/* For image-only boxes on the front page, whole of image is a link */
 .box-masonry .box-masonry-hover-text-header {
-  pointer-events: none; /* For image-only boxes on the front page, whole of image is a link */
+  pointer-events: none; 
 }
 
+/* For "continue reading" button from blog list */
+#amber-btn {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  border-radius: 0;
+  border: 1px solid;
+}
+
+/* Remove space between entries on blog post list */
+section {
+  position: relative;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+/* Set colour of text underneath a heading*/
+.content-column-content p,
+.content-column-content li {
+  color: #000000;
+}
