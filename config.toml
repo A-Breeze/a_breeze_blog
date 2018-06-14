@@ -1,4 +1,4 @@
-baseurl = "abreeze.netlify.com/"
+baseurl = "https://abreeze.netlify.com/"
 title = "Alex Breeze"
 theme = "hugo-creative-portfolio-theme"
 languageCode = "en-us"
