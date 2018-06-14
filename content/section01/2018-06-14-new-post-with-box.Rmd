@@ -37,3 +37,32 @@ pie(
 )
 ```
 
+<div class="alert alert-danger" role="alert">
+  Danger: This is a warning!
+</div>
+
+<div class="alert alert-info" role="alert">This is just a message</div>
+
+<div class="alert alert-success" role="alert">You've done it!</div>
+
+<div class="alert alert-warning" role="alert">Watch out!</div>
+
+
+<span class="badge badge-default">Default</span>
+<span class="badge badge-primary">Primary</span>
+<span class="badge badge-success">Success</span>
+<span class="badge badge-info">Info</span>
+<span class="badge badge-warning">Warning</span>
+<span class="badge badge-danger">Danger</span>
+
+<button type="button" class="btn btn-outline-primary">Primary</button>
+<button type="button" class="btn btn-outline-secondary">Secondary</button>
+<button type="button" class="btn btn-outline-success">Success</button>
+<button type="button" class="btn btn-outline-info">Info</button>
+<button type="button" class="btn btn-outline-warning">Warning</button>
+<button type="button" class="btn btn-outline-danger">Danger</button>
+
+More on the [Bootstrap](https://getbootstrap.com/docs/3.3/components/#alerts) page.
+
+
+
