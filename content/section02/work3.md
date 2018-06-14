@@ -6,6 +6,7 @@ title = "Name of the work 3"
 draft = false
 weight = 2
 type = "post"
+categories = ["cat2", "R"]
 +++
 
 Fifth abundantly made Give sixth hath. Cattle creature i be don't them.

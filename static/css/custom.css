@@ -25,6 +25,7 @@ ELEPHANT IMPORT
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 0.08em;
+  margin: 0 0 10px;
 }
 #blog-listing-medium .post .author-category a {
   font-weight: 500;

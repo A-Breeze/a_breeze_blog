@@ -4,7 +4,18 @@
   <div class="row">
     <div class="col-lg-8">
       <div class="content-column-content" id="blog-listing-medium">
-         <h1>{{ .Title }}</h1>
+         <h1>{{ .Name }}</h1>
+
+          <!-- Special page for categories of the posts -->
+          {{if eq .Title "Categories"}}
+          <ul>
+              {{ range $key, $value := .Site.Taxonomies.categories }}
+              <li>
+                  <a href="/categories/{{ $key | urlize }}">{{ $key | title }}</a>
+              </li>
+              {{ end }}
+          </ul>
+          {{ else }}
 
          {{if eq .Title "Section01"}}
          <p class="author-category"> This text is hard-coded for the Section01 page inside layout/_default/list</p>
@@ -19,7 +30,7 @@
          {{end}}
 
 
-          {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+          {{ $paginator := .Paginate (where .Data.Pages "Type" "post") 5 }}
           {{ range $paginator.Pages.ByDate.Reverse }}
           <section class="post">
               <div class="row">
@@ -37,20 +48,24 @@
                   <div class="col-md-8">
                       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
                       <div class="clearfix">
-                          <p class="author-category">
+                          <div class="author-category">
                             {{ if isset .Params "author" }}
-                            By {{ .Params.author }}
+                            By {{ .Params.author }} <br>
                             {{ end }}
                             {{ if isset .Params "categories" }}
                             {{ if gt (len .Params.categories) 0 }}
-                            <br>in <a href="{{ $.Site.BaseURL }}categories/{{ index .Params.categories 0 | urlize | lower }}">{{ index .Params.categories 0 }}</a>
+                              {{ with .Params.categories }}
+                              in
+                                {{ range . }}
+                                <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}">{{ . }}</a>
+                                {{ end }}
+                              {{ end }}
                             {{ end }}
                             {{ end }}
-
-                          </p>
-                          <p class="date-comments">
+                          </div>
+                          <div class="date-comments">
                               <a href="{{ .Permalink }}"><i class="fa fa-calendar-o"></i> {{ .Date.Format "January 2, 2006" }}</a>
-                          </p>
+                          </div>
                       </div>
                       <p class="intro">
                        {{ if .Description }}
@@ -69,22 +84,22 @@
           {{ end }}
 
           <ul class="pager">
-              {{ if .Paginator.HasPrev }}
-              <li class="previous"><a href="{{ .Site.BaseURL }}{{ .Paginator.Prev.URL }}">&larr; Newer</a></li>
+              {{ if $paginator.HasPrev }}
+              <li class="previous"><a href="{{ $paginator.Prev.URL }}">&larr; Newer</a></li>
               {{ else }}
               <li class="previous disabled"><a href="#">&larr; Newer</a></li>
               {{ end }}
 
-              {{ if .Paginator.HasNext }}
-              <li class="next"><a href="{{ .Site.BaseURL }}{{ .Paginator.Next.URL }}">Older &rarr;</a></li>
+              {{ if $paginator.HasNext }}
+              <li class="next"><a href="{{ $paginator.Next.URL }}">Older &rarr;</a></li>
               {{ else }}
               <li class="next disabled"><a href="#">Older &rarr;</a></li>
               {{ end }}
           </ul>
 
-
       </div>
     </div>
   </div>
 </div>
+{{ end }}
 {{ end }}
