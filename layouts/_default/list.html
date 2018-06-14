@@ -34,18 +34,18 @@
           {{ range $paginator.Pages.ByDate.Reverse }}
           <section class="post">
               <div class="row">
+                {{ if .Params.image }}
                   <div class="col-md-4">
                     <div class="image">
                         <a href="{{ .Permalink }}">
-                            {{ if .Params.image }}
                             <img src="{{ .Site.BaseURL}}{{ .Params.image }}" class="img-responsive" alt="">
-                            {{ else }}
-                            <img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
-                            {{ end }}
                         </a>
                     </div>
                   </div>
                   <div class="col-md-8">
+                  {{ else }}
+                  <div class="col-md-12">
+                  {{ end }}
                       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
                       <div class="clearfix">
                           <div class="author-category">
@@ -73,9 +73,6 @@
                        {{ else }}
                           {{ .Summary | plainify | safeHTML }}
                       {{ end }}</p>
-    
-
-
                       <p class="read-more"><a id="amber-btn" href="{{ .Permalink }}" class="btn btn-template-main">Continue reading</a>
                       </p>
                   </div>

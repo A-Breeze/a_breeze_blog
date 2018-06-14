@@ -1,0 +1,50 @@
+{{ define "main" }}
+<div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+  {{ partial "mobile_nav_toggle.html" . }}
+  <div class="row">
+    
+    {{ if .Params.image }}
+    <div class="col-sm-4">
+      <div class="image">
+        <img src="{{ .Site.BaseURL }}{{ .Params.image }}" class="img-responsive" alt="">
+      </div>
+    </div>
+    <div class="col-md-8">
+    {{ else }}
+    <div class="content-column-content">
+    <div class="col-lg-8">
+    {{ end }}
+        <h2>{{ .Title }}</h2>
+            <p class="author-category">
+              {{ if isset .Params "author" }}
+              By: {{ .Params.author }} <br>
+              {{ end }}
+              {{ if isset .Params "categories" }}
+              {{ if gt (len .Params.categories) 0 }}
+                {{ with .Params.categories }}
+                Categories:
+                  {{ range . }}
+                  <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}">{{ . }}</a>
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              {{ end }}
+            </p>
+            <p class="date-comments">
+              <i class="fa fa-calendar-o"></i> {{ .Date.Format "January 2, 2006" }}
+            </p>
+    </div>
+  </div>
+  {{ if .Params.image }}<br>{{ else }}</div>{{ end }}
+  <div class="row">
+   <div class="content-column-content">
+          <div class="col-lg-8">
+{{ $body := replace .Content .Summary "" }}
+{{ $body | safeHTML }}
+      
+       </div>
+     </div>
+   </div>
+  </div>
+</div>
+{{ end }}
