@@ -96,3 +96,11 @@ ELEPHANT IMPORT
 #blog-listing-medium .post .read-more {
   text-align: right;
 }
+
+/*
+----- More customisation -----
+*/
+.box-masonry .box-masonry-hover-text-header {
+  pointer-events: none; /* For image-only boxes on the front page, whole of image is a link */
+}
+

@@ -8,6 +8,13 @@ disqusShortname = ""
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
 
+[permalinks]
+  section01 = "section01/:year/:month/:day/:slug/"
+  section02 = "section02/:year/:month/:day/:slug"
+  section03 = "section03/:year/:month/:day/:slug"
+
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
 [params]
   # Style options: default (pink), blue, green, pink, red, sea, violet
   # Use custom.css for your custom styling
