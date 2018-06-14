@@ -5,7 +5,6 @@ image = "img/portfolio/a4-paper.jpg"
 date = "2016-11-05T18:25:22+05:30"
 months = "2016 11"
 title = "This is the title of work1"
-weight = 0
 type = "post"
 author = "`by` is default. Not too long"
 categories = ["cat1", "cat2"]

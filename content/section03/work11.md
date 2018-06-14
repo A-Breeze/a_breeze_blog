@@ -5,7 +5,6 @@ showonlyimage = true
 date = "2016-12-05T20:23:59+05:30"
 months = "2016 12"
 title = "Item with image 11"
-weight = 11
 type = "post"
 +++
 

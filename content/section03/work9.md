@@ -5,7 +5,6 @@ showonlyimage = false
 date = "2016-11-05T20:02:19+05:30"
 months = "2016 11"
 title = "Notice the slug in the URL"
-weight = 9
 type = "post"
 slug = "Helloooo"
 +++

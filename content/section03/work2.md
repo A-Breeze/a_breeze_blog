@@ -5,7 +5,6 @@ title = "Name of the work 2"
 draft = false
 image = "img/portfolio/business-card-26.jpg"
 showonlyimage = false
-weight = 1
 description = "This is the text in the description field, not the start of the post text"
 type = "post"
 +++

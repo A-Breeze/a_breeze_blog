@@ -1,0 +1,39 @@
+---
+title: "Remember: you must mark `type` as 'post'"
+author: Alex
+date: 2018-06-14T00:00:00-00:00
+months: '2018 06'
+slug: excellent_slug
+categories: ["testing"]
+output: 
+  blogdown::html_page:
+    toc: true
+    highlight: "zenburn"
+description: "Even better than the last one"
+type: "post"
+---
+
+I am writing some new content, even in `Python`.
+
+```{r, include=FALSE}
+library(dplyr)
+```
+
+```{python, eval=FALSE}
+x = 'hello, python world!'
+print(x.split(' '))
+```
+
+
+![](/section01/2018-06-14-new-post-with-box_files/download.png)
+
+```{r pie, fig.cap='A fancy pie chart.', tidy=FALSE}
+par(mar = c(0, 1, 0, 1))
+pie(
+  c(360, 60, 20),
+  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),
+  col = c('#0292D8', '#F7EA39', '#C4B632'),
+  init.angle = -50, border = NA
+)
+```
+
