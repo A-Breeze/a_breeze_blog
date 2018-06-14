@@ -31,7 +31,8 @@
               {{ end }}
             </p>
             <p class="date-comments">
-              <i class="fa fa-calendar-o"></i> {{ .Date.Format "January 2, 2006" }}
+              {{ $month := .Date.Format "2006-01" }}
+              <a href="{{ $.Site.BaseURL }}months/{{ $month | urlize }}"><i class="fa fa-calendar-o"></i> {{ .Date.Format "2 January 2006" }}</a>
             </p>
     </div>
   </div>

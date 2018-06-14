@@ -2,7 +2,8 @@
 draft = false
 image = ""
 showonlyimage = false
-date = "2016-11-05T19:50:47+05:30"
+date = "2016-09-05T19:50:47+05:30"
+months = "2016 09"
 title = "Item without image"
 weight = 4
 type = "post"

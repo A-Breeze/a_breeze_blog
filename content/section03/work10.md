@@ -2,7 +2,8 @@
 draft = false
 image = "img/portfolio/trifold.jpg"
 showonlyimage = true
-date = "2016-11-05T20:22:08+05:30"
+date = "2016-11-07T20:22:08+05:30"
+months = "2016 11"
 title = "Item with image 10"
 weight = 10
 type = "post"

@@ -6,15 +6,25 @@
       <div class="content-column-content" id="blog-listing-medium">
          <h1>{{ .Name }}</h1>
 
-          <!-- Special page for categories of the posts -->
-          {{if eq .Title "Categories"}}
-          <ul>
-              {{ range $key, $value := .Site.Taxonomies.categories }}
-              <li>
-                  <a href="/categories/{{ $key | urlize }}">{{ $key | title }}</a>
-              </li>
+          {{if eq .Title "Categories"}} <!-- Special page for categories of the posts -->
+            {{ range $key, $value := .Site.Taxonomies.categories }}
+              <div><a href="/categories/{{ $key | urlize }}">{{ $key | title }}</a></div>
+              <ul>
+              {{ range $value.Pages }}
+                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
               {{ end }}
-          </ul>
+              </ul>
+            {{ end }}
+
+          {{ else if eq .Title "Months"}} <!-- Special page for month of the posts -->
+            {{ range $key, $value := .Site.Taxonomies.months }}
+              <div><a href="/months/{{ $key | urlize }}">{{ $key | title }}</a></div>
+              <ul>
+              {{ range $value.Pages }}
+                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+              {{ end }}
+              </ul>
+            {{ end }}
           {{ else }}
 
          {{if eq .Title "Section01"}}
@@ -64,7 +74,8 @@
                             {{ end }}
                           </div>
                           <div class="date-comments">
-                              <a href="{{ .Permalink }}"><i class="fa fa-calendar-o"></i> {{ .Date.Format "January 2, 2006" }}</a>
+                            {{ $month := .Date.Format "2006-01" }}
+                              <a href="{{ $.Site.BaseURL }}months/{{ $month | urlize }}"><i class="fa fa-calendar-o"></i> {{ .Date.Format "2 January 2006" }}</a>
                           </div>
                       </div>
                       <p class="intro">
