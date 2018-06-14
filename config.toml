@@ -33,12 +33,6 @@ googleAnalytics = ""
   email = "alexander.breeze@yahoo.com"
 
   # Nav links in the side bar
-  
-  [[params.navlinks]]
-  name = "Portfolio (to be renamed)"
-  url = "portfolio/"
-  home = true # If you do not indicate a home page, it will go to the index
-
   [[params.navlinks]]
   name = "Section 1"
   url = "section01/"
@@ -46,6 +40,10 @@ googleAnalytics = ""
   [[params.navlinks]]
   name = "Section 2"
   url = "section02/"
+  
+  [[params.navlinks]]
+  name = "Section 3"
+  url = "section03/"
 
   [[params.navlinks]]
   name = "About me"
