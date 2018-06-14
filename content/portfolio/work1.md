@@ -5,6 +5,7 @@ image = "img/portfolio/a4-paper.jpg"
 date = "2016-11-05T18:25:22+05:30"
 title = "This is the title of work1.md"
 weight = 0
+type = "post"
 +++
 
 This is the first few sentences of the .md, which will show up on the portfolio page. Note that work1 has weight = 0, so it will appear at the bottom.
