@@ -93,7 +93,7 @@ ELEPHANT IMPORT
 }
 
 /* For "continue reading" button from blog list */
-#amber-btn {
+#continue-reading-btn {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
